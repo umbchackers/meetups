@@ -1,0 +1,17 @@
+<style>
+    input.form-control { max-width: 50%; }
+</style>
+
+<div class="container">
+    <h2 class="mt-3">Login</h2>
+
+    <div class="alert alert-danger" ng-show="error">
+        {{error}}
+    </div>
+
+    <form ng-submit="login()">
+        <input class="form-control mb-2" ng-model="email" type="email" placeholder="Email">
+        <input class="form-control mb-2" ng-model="password" type="password" placeholder="Password">
+        <input class="btn btn-success" type="submit" value="Login">
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<style>
+    .jumbotron { padding-top: 2em; padding-bottom: 2em; }
+</style>
+
+<div class="container-fluid">
+    <h1 class="text-center mt-3">{{eventName}} Meetups 
+        <p class="float-right">
+            <a class="btn btn-success mt-2" ng-hide="user" href="/#login">Login</a>
+        </p>
+        <p class="float-right">
+            <a class="btn btn-success mt-2" ng-show="user" href="/#create">Create</a>
+        </p>
+    </h1>
+
+    <div class="jumbotron" ng-repeat="meetup in meetups | orderBy: 'startTime' track by $index">
+        <h4>{{meetup.title}}</h4>
+        
+        <p class="mb-1">
+            <b>Location: </b>{{meetup.location}}
+        </p>
+        <p class="mb-1">
+            <b>Starts: </b>{{meetup.startTime | date : "hh:mm a (EEEE, LLLL dd)"}} 
+        </p>
+        <p class="mb-1">
+            <b>Ends: </b>{{meetup.endTime | date : "hh:mm a (EEEE, LLLL dd)"}} 
+        </p>
+        <p class="mb-1">
+            <b>Description: </b><br>{{meetup.description}}
+        </p>
+        <p>
+            <b>Attendees:</b> {{meetup.attendees.join(", ")}}
+        </p>
+
+        <button class="btn btn-primary" ng-click="signup($index)">I Wanna Go!</button>
+    </div>
+</div>
