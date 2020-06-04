@@ -8,10 +8,6 @@ This would be ideal for hackUMBC to allow people to form new relationships and t
 2. The user logs in with their Quill account.
 3. The user can either create a meetup or say they'll attend existing planned meetups.
 
-## Potential Improvements
-- Create an icebox version of database so that a meetup requires approval from an admin
-- Do not allow a person to add themselves twice
-
 ## Safety
 - All meetups will be screened for anything inappropriate.
 - There will be an organizer or volunteer at each meetup to ensure nothing bad occurs.
