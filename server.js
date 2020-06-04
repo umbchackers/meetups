@@ -1,7 +1,10 @@
 // user-defined constants
 const LOGIN_ENDPOINT = "https://register.hackumbc.org/auth/login";
-const DATABASE_URI = "mongodb://localhost:27017/meetups";
-const PORT = 3000;
+const DATABASE_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/meetups";
+const PORT = process.env.PORT || 3000;
+
+// import to be able to send requests
+const request = require("request");
 
 // express imports to create server
 const express = require("express");
@@ -19,8 +22,12 @@ const mongoose = require("mongoose");
 const Meetup = require("./Meetup.js");
 mongoose.connect(DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// import to be able to send requests
-const request = require("request");
+/**
+ * Start the server listening at PORT number.
+ */
+server.listen(PORT, () => {
+    console.log("Server running on port: " + PORT);
+});
 
 /**
  * Serve the Angular web application.
@@ -99,11 +106,4 @@ app.post("/add-attendee", (req, res) => {
 
         res.send(meetup);
     });
-});
-
-/**
- * Start the server listening at PORT number.
- */
-server.listen(PORT, () => {
-    console.log("Server running on http://127.0.0.1:" + PORT);
 });
