@@ -11,12 +11,6 @@ This would be ideal for hackUMBC to allow people to form new relationships and t
 ## Potential Improvements
 - Create an icebox version of database so that a meetup requires approval from an admin
 - Do not allow a person to add themselves twice
-  - This creates a problem with people with the same name
-- UI/UX Tuneup
-  - Add more cues for information especially in description field
-- Persistent login
-- Slack hooks for event reminders
-- Better time inputs
 
 ## Safety
 - All meetups will be screened for anything inappropriate.
